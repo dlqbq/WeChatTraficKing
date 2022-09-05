@@ -132,8 +132,11 @@ class ServiceDailyData():
     def __str__(self) -> str:
         return '(电话=%s,有效点击数=%s,服务日数=%s,点击数=%s,服务日期=%s'%(self.phoneNum, self.effectiveTapTimes, self.serviceDayNum, self.tapTimes, str(self.serviceDays))
 
+class ServiceData():
+    date: str = ''
+    serviceDailyData: List[ServiceDailyData] = []
 
-def parse_data(RowList):
+def parse_daily_data(RowList):
     ServiceDailyDataList: List[ServiceDailyData] = []
     for row in RowList:
         phoneNum = row[dictProperties['phoneNumberKey']]
@@ -170,7 +173,7 @@ def read_files(folder_path):
         try:
             update_log('读取文件：%s'%(filename))
             RowList = read_csv_file(filename)
-            ServiceDailyDataList: List[ServiceDailyData] = parse_data(RowList)
+            ServiceDailyDataList: List[ServiceDailyData] = parse_daily_data(RowList)
             for serviceDailyData in ServiceDailyDataList:
                 update_log(serviceDailyData)
         except BaseException as e:
