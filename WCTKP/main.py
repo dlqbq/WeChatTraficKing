@@ -10,7 +10,7 @@ from typing import List
 
 from PropertiesUtil import Properties
 
-dictProperties = Properties('./config.properties').getProperties()
+dictProperties = Properties('f:\WeChatTraficKing\WCTKP\config.properties').getProperties()
 
 print(dictProperties)
 
@@ -107,7 +107,7 @@ def read_csv_file(fileName):
     逐个读取文件的内容
     '''
     RowList = []
-    with open(fileName, encoding='gbk', errors='ignore') as f:
+    with open(fileName, encoding='utf-8', errors='ignore') as f:
         f_csv = csv.DictReader(f)
         for row in f_csv:
             RowList.append(row)
