@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "csvtojson": "^2.0.10",
+    "electron": "^20.1.1",
+    "iconv-lite": "^0.6.3"
+  },
+  "name": "wctkn",
+  "version": "1.0.0",
+  "main": "Converter.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "QBQ",
+  "license": "ISC",
+  "description": "WeChat Trafic King Nodejs"
+}
