@@ -10,7 +10,7 @@ from typing import List
 
 from PropertiesUtil import Properties
 
-dictProperties = Properties('f:\WeChatTraficKing\WCTKP\config.properties').getProperties()
+dictProperties = Properties('./config.properties').getProperties()
 
 print(dictProperties)
 
